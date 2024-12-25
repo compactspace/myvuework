@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="boardWrapper"   >
         <div class="boardContentArea" id="idboardContentArea" >
             <div class="boardContentList" v-for="list in qnaList.boardList" >
@@ -180,4 +180,4 @@ onMounted(async () => {
 .btnArea {
     display: flex;
 }
-</style>
+</style> -->

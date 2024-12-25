@@ -7,8 +7,12 @@ import ProductList from '../views/product/ProductList.vue';
 import MyInfoMation from '../views/myinfomation/MyInfoMation.vue';
 import ReviewPage from '../components/page/review/ReviewPage.vue';
 import FormDataEx01 from '../문법용/FormData/FormDataEx01.vue';
-import PaiginPlacticeEx01 from '../문법용/페이징라이브러리/PaiginPlacticeEx01.vue';
+//import PaiginPlacticeEx01 from '../문법용/페이징라이브러리/PaiginPlacticeEx01.vue';
+import PaiginPlacticeEx02 from '../문법용/페이징라이브러리/PaiginPlacticeEx02.vue';
 //라우트(routes) 정의 : URL 요청에 대해 어떤 페이지(컴포넌트)를 보여줄지에 대한 매핑정보를 정의
+
+import PropsToTanStackQueryEx01 from '../문법용/텐스텍쿼리/PropsToTanStackQueryEx01.vue';
+
 const routes = [
   {
     path: '/',
@@ -55,13 +59,28 @@ const routes = [
   name:'formdataex01',
   component:FormDataEx01
 },
+// {
+// path:'/PaiginPlacticeEx01',
+// name:"PaiginPlacticeEx01",
+// component:PaiginPlacticeEx01
+
+// }
+//PaiginPlacticeEx02
+,
 {
-path:'/PaiginPlacticeEx01',
-name:"PaiginPlacticeEx01",
-component:PaiginPlacticeEx01
-
-}
-
+  path:'/PaiginPlacticeEx02',
+  name:"PaiginPlacticeEx02",
+  component:PaiginPlacticeEx02
+  
+  }
+//PropsToTanStackQueryEx01
+,
+{
+  path:'/PropsToTanStackQueryEx01',
+  name:"PropsToTanStackQueryEx01",
+  component:PropsToTanStackQueryEx01
+  
+  }
 
 ];
 const router = createRouter({
