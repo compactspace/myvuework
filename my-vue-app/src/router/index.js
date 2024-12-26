@@ -12,7 +12,9 @@ import PaiginPlacticeEx02 from '../문법용/페이징라이브러리/PaiginPlac
 //라우트(routes) 정의 : URL 요청에 대해 어떤 페이지(컴포넌트)를 보여줄지에 대한 매핑정보를 정의
 
 import PropsToTanStackQueryEx01 from '../문법용/텐스텍쿼리/PropsToTanStackQueryEx01.vue';
-
+import TanStackQuery2 from '../문법용/텐스텍쿼리/TanStackQuery2.vue';
+import TanStackQuery3 from '../문법용/텐스텍쿼리/TanStackQuery3.vue';
+import BoardModalDetail from '../문법용/모달컴포넌트문법/BoardModalDetail.vue';
 const routes = [
   {
     path: '/',
@@ -47,40 +49,62 @@ const routes = [
 
 
   {
-    path:'/review',
-    name:"review",
-    component:ReviewPage
+    path: '/review',
+    name: "review",
+    component: ReviewPage
   }
 
-///여기 이하는 그냥 문법용 라우터이다.
-,
-{
-  path:'/formdataex01',
-  name:'formdataex01',
-  component:FormDataEx01
-},
-// {
-// path:'/PaiginPlacticeEx01',
-// name:"PaiginPlacticeEx01",
-// component:PaiginPlacticeEx01
+  ///여기 이하는 그냥 문법용 라우터이다.
+  ,
+  {
+    path: '/formdataex01',
+    name: 'formdataex01',
+    component: FormDataEx01
+  },
+  // {
+  // path:'/PaiginPlacticeEx01',
+  // name:"PaiginPlacticeEx01",
+  // component:PaiginPlacticeEx01
 
-// }
-//PaiginPlacticeEx02
-,
-{
-  path:'/PaiginPlacticeEx02',
-  name:"PaiginPlacticeEx02",
-  component:PaiginPlacticeEx02
-  
+  // }
+  //PaiginPlacticeEx02
+  ,
+  {
+    path: '/PaiginPlacticeEx02',
+    name: "PaiginPlacticeEx02",
+    component: PaiginPlacticeEx02
+
   }
-//PropsToTanStackQueryEx01
-,
-{
-  path:'/PropsToTanStackQueryEx01',
-  name:"PropsToTanStackQueryEx01",
-  component:PropsToTanStackQueryEx01
-  
+  //PropsToTanStackQueryEx01
+  ,
+  {
+    path: '/PropsToTanStackQueryEx01',
+    name: "PropsToTanStackQueryEx01",
+    component: PropsToTanStackQueryEx01
+
   }
+  ,
+  {
+    path: '/query2.do',
+    name: "query ",
+    component: TanStackQuery2
+
+  }
+  ,
+  {
+    path: '/query3.do',
+    name: "query ",
+    component: TanStackQuery3
+
+  }
+
+  ,
+  {
+    path: '/boardDetail.do/:seq',
+    name: "boardDetail.do",
+    component: BoardModalDetail
+  }
+
 
 ];
 const router = createRouter({
