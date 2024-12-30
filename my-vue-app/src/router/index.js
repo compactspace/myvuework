@@ -6,6 +6,9 @@ import LoginGo from '../views/login/LoginGo.vue';
 import ProductList from '../views/product/ProductList.vue';
 import MyInfoMation from '../views/myinfomation/MyInfoMation.vue';
 import ReviewPage from '../components/page/review/ReviewPage.vue';
+import MyInfo from '../views/Myinfo/MyInfo.vue';
+
+//여기 이하는 문법
 import FormDataEx01 from '../문법용/FormData/FormDataEx01.vue';
 //import PaiginPlacticeEx01 from '../문법용/페이징라이브러리/PaiginPlacticeEx01.vue';
 import PaiginPlacticeEx02 from '../문법용/페이징라이브러리/PaiginPlacticeEx02.vue';
@@ -15,6 +18,13 @@ import PropsToTanStackQueryEx01 from '../문법용/텐스텍쿼리/PropsToTanSta
 import TanStackQuery2 from '../문법용/텐스텍쿼리/TanStackQuery2.vue';
 import TanStackQuery3 from '../문법용/텐스텍쿼리/TanStackQuery3.vue';
 import BoardModalDetail from '../문법용/모달컴포넌트문법/BoardModalDetail.vue';
+
+import ParentComponent from '../views/컴포넌트간데이터연습페이지/ParentComponent.vue';
+//바로위와 다르다 이름만 비슷
+import ParentCompoNent from '../문법용/컴포넌트데이터전달설계연습/ParentCompoNent.vue';
+
+
+
 const routes = [
   {
     path: '/',
@@ -27,9 +37,13 @@ const routes = [
     name: 'login',
     component: LoginGo,
   },
-
-
-
+,
+{
+  path:'/MyInfo/:userId',
+  name:"MyInfo",
+  component:MyInfo
+}
+,
   {
     path: '/onedayclass',
     name: 'about',
@@ -103,6 +117,19 @@ const routes = [
     path: '/boardDetail.do/:seq',
     name: "boardDetail.do",
     component: BoardModalDetail
+  }
+  ,
+  {
+    path:'/ParentComponent',
+    name:ParentComponent,
+    component:ParentComponent
+
+  }
+,
+  {
+    path:"/datapattern",    
+    name:"datapattern",
+    component:ParentCompoNent
   }
 
 
