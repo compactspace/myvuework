@@ -17,14 +17,14 @@ const oneDayClassList=ref({
 const { data: ClassList, isSuccess } = useonedayclassListQuery(onedayclass_num);
 
 watchEffect(()=>{
-  
-  if(isSuccess.value){   
-    oneDayClassList.value=ClassList.value.oneDayClassList  
+
+  if(ClassList.value){
+
+    oneDayClassList.value={...ClassList.value.oneDayClassList}
+    console.log(oneDayClassList.value)
   }
-  console.log("부모 왓치")
   
 })
 provide("provideValue",oneDayClassList)
-// console.log("왓치")
 
 </script>

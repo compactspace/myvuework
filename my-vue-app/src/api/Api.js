@@ -23,7 +23,16 @@ export const Api={
         delete:'/api/boardDelete.do'
 
     }
+,
+    oneday:{
 
+        //원데이클래스의 예약 조회등 관련
+        reserve:{
+            opendyList:"/api/openclassList.do"
+        }
+
+
+    }
 
 
 }

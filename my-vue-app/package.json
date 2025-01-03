@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@tanstack/vue-query": "^5.62.8",
+    "@vuepic/vue-datepicker": "^10.0.0",
     "axios": "^1.7.9",
+    "date-fns": "^4.1.0",
     "pinia": "^2.3.0",
     "pinia-plugin-persistedstate": "^4.2.0",
     "sass": "^1.83.0",

@@ -8,6 +8,9 @@ import MyInfoMation from '../views/myinfomation/MyInfoMation.vue';
 import ReviewPage from '../components/page/review/ReviewPage.vue';
 import MyInfo from '../views/Myinfo/MyInfo.vue';
 
+
+
+
 //여기 이하는 문법
 import FormDataEx01 from '../문법용/FormData/FormDataEx01.vue';
 //import PaiginPlacticeEx01 from '../문법용/페이징라이브러리/PaiginPlacticeEx01.vue';
@@ -23,7 +26,11 @@ import ParentComponent from '../views/컴포넌트간데이터연습페이지/Pa
 //바로위와 다르다 이름만 비슷
 import ParentCompoNent from '../문법용/컴포넌트데이터전달설계연습/ParentCompoNent.vue';
 
+import ParentCompo2 from '../컴포넌트데이터전달연습2와DB하이픈업데이트/ParentCompo2.vue';
 
+
+//달력 라이브러리 연습
+import CalendarEx01 from '../문법용/달력라이브러리/CalendarExampleEx01.vue'
 
 const routes = [
   {
@@ -44,11 +51,6 @@ const routes = [
   component:MyInfo
 }
 ,
-  {
-    path: '/onedayclass',
-    name: 'about',
-    component: OnedayClass,
-  },
 
   {
     path: '/product',
@@ -68,7 +70,25 @@ const routes = [
     component: ReviewPage
   }
 
+
+,{
+  path:'/onedayclasreserve/:onedayclass_num',
+  name:'onedayclasreserve',
+  component:OnedayClass
+}
+
+
   ///여기 이하는 그냥 문법용 라우터이다.
+,{
+  path:'/CalendarEx01',
+  name:"CalendarEx01",
+  component:CalendarEx01
+
+
+}
+
+
+
   ,
   {
     path: '/formdataex01',
@@ -131,6 +151,13 @@ const routes = [
     name:"datapattern",
     component:ParentCompoNent
   }
+,
+{
+  path:"/datapattern2",    
+  name:"datapattern",
+  component:ParentCompo2
+}
+
 
 
 ];

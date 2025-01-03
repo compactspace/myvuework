@@ -3,6 +3,8 @@ import { createPinia } from 'pinia';
 import App from './App.vue'
 import router from './router';
 
+
+
 //주의 해라 이는 핀야로 저장한걸 마치 세션처럼 저장해준다.
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
