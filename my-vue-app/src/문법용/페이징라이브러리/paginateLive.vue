@@ -34,7 +34,11 @@ const { totalItems, itemsPerPage, maxPagesShown, onClick } = defineProps([
     background-color: rgb(242, 242, 242);
     border: 1px solid rgb(217, 217, 217);
     color: black;
+    display: inline-block;
 }
+
+
+
 .paginate-buttons:hover {
     background-color: #d8d8d8;
 }

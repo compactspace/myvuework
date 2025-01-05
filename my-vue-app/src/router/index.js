@@ -11,6 +11,7 @@ import MyInfo from '../views/Myinfo/MyInfo.vue';
 
 
 
+
 //여기 이하는 문법
 import FormDataEx01 from '../문법용/FormData/FormDataEx01.vue';
 //import PaiginPlacticeEx01 from '../문법용/페이징라이브러리/PaiginPlacticeEx01.vue';
@@ -31,6 +32,11 @@ import ParentCompo2 from '../컴포넌트데이터전달연습2와DB하이픈업
 
 //달력 라이브러리 연습
 import CalendarEx01 from '../문법용/달력라이브러리/CalendarExampleEx01.vue'
+
+import AwsDBEx01 from '../문법용/스프링과DBAWS/AwsDBEx01.vue';
+
+import ApplicantMain from '../문법용/스프링과DBAWS모듈화해보자/ApplicantMain.vue';
+
 
 const routes = [
   {
@@ -158,6 +164,17 @@ const routes = [
   component:ParentCompo2
 }
 
+,{
+path:"/awsex01",
+name:"awsex01",
+component:AwsDBEx01
+}
+
+,{
+  path:"/awsex02",
+  name:"awsex02",
+  component:ApplicantMain
+}
 
 
 ];
