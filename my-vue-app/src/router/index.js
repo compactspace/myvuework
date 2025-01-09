@@ -38,6 +38,9 @@ import AwsDBEx01 from '../문법용/스프링과DBAWS/AwsDBEx01.vue';
 import ApplicantMain from '../문법용/스프링과DBAWS모듈화해보자/ApplicantMain.vue';
 
 
+import ApplicantMain2 from '../문법용/스프링과DBAWS모듈화해보자2/ApplicantViewMain.vue'
+
+
 const routes = [
   {
     path: '/',
@@ -175,6 +178,14 @@ component:AwsDBEx01
   name:"awsex02",
   component:ApplicantMain
 }
+
+
+,{
+  path:'/awsex03',
+  name:"awsex03",
+  component:ApplicantMain2
+}
+
 
 
 ];

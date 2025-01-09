@@ -50,9 +50,9 @@ const { data: applicantlist, refetch } = useGetApplicantListQUery(
   injectedValue
 );
 
-// const postIdxChangeFnc = () => {
-//   refetch();
-// };
+const postIdxChangeFnc = () => {
+  refetch();
+};
 
 const choiceStatusFnc = () => {
   refetch();
