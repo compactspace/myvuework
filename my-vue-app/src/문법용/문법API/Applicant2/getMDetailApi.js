@@ -2,47 +2,55 @@
 import axios from "axios";
 
 
-export const getMDetailApi = async (postIdx, MDetail, choiceStatus, provideMDVal) => {  
+export const getMDetailApi = async (MDetail) => {  
   
+  let res = await axios.post("/api/MDetail.do",{loginId:"company01"}); 
   
-  let res = await axios.post("/api/MDetail.do",{loginId:"company01"});
+  let hirProstingArr = new Array(); 
+  let hireProcessArr = new Array();
+  let hirePostingIdx= new Array();
 
-  MDetail.value.Md = [...res.data.MDetail];
+let fullHirProcess= new Array(); 
 
-  let hirProcessArr = new Array();
-  let hirProcessArrBox;
+  let i=0;
 
 
-  let temporayryArr = new Object();
- 
+console.log(res.data)
+
+
+
   res.data.MDetail.forEach((item) => {
-    let { hirProcess,  title } = item;
-    if(item.postIdx===postIdx.value){
-   //   console.log(`엠디테일에서 postIdx ${ item.postIdx}  그리고 title  ${title}`);   
-      hirProcessArrBox=[...hirProcess.split(" → ").map((item) => item.trim())];
+    let { hirProcess,  title ,postIdx} = item;
+     // console.log(postIdx)
+    if(i==0){
+   //   console.log(hirProcess)
+      hireProcessArr = hirProcess.split(" → ").map((item) => item.trim());
     }
-    temporayryArr[item.postIdx] = hirProcess.split(" → ").map((item) => item.trim());
+    hirProstingArr[i] = title 
+    hirePostingIdx[i]=postIdx;
+    fullHirProcess[i]= hirProcess.split(" → ").map((item) => item.trim());
+    
+    i++;
+  });   
   
-  });
-
- 
-
-  if(hirProcessArrBox==undefined){
-    hirProcessArrBox=[...res.data.MDetail[0].hirProcess.split(" → ").map((item) => item.trim())];
-  }
+  hireProcessArr.push("합격");
+  hireProcessArr.push("탈락");
+  MDetail.value.hirePosting = [...hirProstingArr];
+  MDetail.value.hireProcess = [ ...hireProcessArr] ;
+  MDetail.value.hirePostingIdx = [ ...hirePostingIdx] ;
+  MDetail.value.fullHirProcess= [ ...fullHirProcess] ;
+  MDetail.value.defaultPostIdx=hirePostingIdx[0];
+  MDetail.value.defaulFirstPor=hireProcessArr[0];
+  // MDetail.value.pullHireList=res.data.MDetail
   
+console.log(MDetail.value.fullHirProcess)
 
-  hirProcessArr = hirProcessArrBox  
-  hirProcessArr.push("합격");
-  hirProcessArr.push("탈락");
-  console.log(hirProcessArr);
-  MDetail.value.hirProcess = [...hirProcessArr];
-  MDetail.value.hireProcessArr = { ...temporayryArr };
 
-  provideMDVal.value = hirProcessArr;
 
-   postIdx.value = res.data.MDetail[0].postIdx;
-  // //console.log(`postIdx.value:  ${postIdx.value} `);
+  // MDetail.value.Md = [...res.data.MDetail];
+  // provideMDVal.value.hirePosting=hirePosting;
+  // provideMDVal.value=MDetail.value;
 
-  return res.data.MDetail;
+
+  return MDetail;
 };
